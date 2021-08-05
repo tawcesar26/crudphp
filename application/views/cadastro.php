@@ -33,30 +33,50 @@
         <h5 class="card-title">Cadastro de Cliente</h5>
 
      <!-------------------FORMULARIO-------------------------->    
-
+    
      <?php 
 
-     echo form_open('pagina/cadastro');
+        if($formerror){
+            echo '<p>'. $formerror .'</p>'; 
+        }
+    ?>
+    <div class="form-row">
+     <?php   
+        echo form_open('pagina/cadastro');
+        echo form_label('Nome: ', 'nome');
+        echo form_input('nome', set_value('nome'));
+        echo form_label('E-mail: ', 'email');
+        echo form_input('email',set_value('email'));
+        echo form_label('Senha: ', 'password');
+        echo form_input('senha',set_value('senha'));
+        echo form_submit('enviar','Enviar mensagem >>', array('class' => 'botao'));
+        echo form_close();
 
-      ?>
-        <form action="">
+
+    ?>
+    </div>
+        <!--<form action="<?php echo base_url('cadastro'); ?>" method="post">
           <div class="form-row">
+
+                  
+            <input type="text" class="form-control" id="nome" name="nome" >
+         
                <div class="form-group col-md-6">
-                     <label for="email">Email</label>
-                     <input type="email" class="form-control" id="email" placeholder="Email">
+                    
+                     <input type="email" class="form-control" id="email" >
                </div>
                <div class="form-group col-md-4">
-                     <label for="dtnascimento">Data de Nascimento</label>
-                    <input type="date" class="form-control" id="dtnascimento" placeholder="">
+                    
+                    <input type="date" class="form-control" id="dtnascimento">
                </div>
                <div class="form-group">
-                  <label for="senha">Senha</label>
-                  <input type="password" class="form-control" id="senha" placeholder="Senha">
+                 
+                  <input type="password" class="form-control" id="senha" >
                </div>
          </div>
       
       <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
+    </form>-->
 
     <!-------------------FORMULARIO-------------------------->
    </div>
