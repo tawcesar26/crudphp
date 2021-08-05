@@ -9,11 +9,32 @@ class Pagina extends CI_Controller{
 		parent::__construct();
 		$this->load->helper('url');
 
+
 	}
 
 	public function index(){
 
-		$this->load->view('home');
+		
+		$dados['titulo'] = 'CRUD CODEIGNITER'; 
+		$this->load->view('home',$dados);
+
+
+
+	}
+
+	public function cadastro(){
+
+		$this->load->helper('form');
+		$dados['titulo'] = 'CRUD CODEIGNITER'; 
+		$this->load->view('cadastro',$dados);
+
+
+	}
+
+	public function clientes(){
+
+		$dados['titulo'] = 'CRUD CODEIGNITER'; 
+		$this->load->view('clientes',$dados);
 
 
 	}
